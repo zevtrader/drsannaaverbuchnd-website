@@ -1,0 +1,4 @@
+# Old Wix URLs -> new pages (keeps Google rankings and old links working)
+/services-1  /services  301
+/contact-3   /contact   301
+/home        /          301

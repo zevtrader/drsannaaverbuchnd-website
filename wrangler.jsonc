@@ -1,0 +1,15 @@
+{
+  // Static site on Cloudflare Workers (free plan). Deploy with: npx wrangler deploy
+  "name": "drsannaaverbuchnd",
+  "compatibility_date": "2026-09-01",
+  // Serve only on her domain, not on a duplicate *.workers.dev address.
+  "workers_dev": false,
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+  // After the domain is on Cloudflare, uncomment to serve the site on it:
+  // ,"routes": [
+  //   { "pattern": "www.drsannaaverbuchnd.com", "custom_domain": true }
+  // ]
+}
