@@ -1,6 +1,6 @@
 # Dr. Sanna Averbuch, ND
 
-> Naturopathic doctor registered with the College of Naturopaths of Ontario, offering virtual naturopathic care by video to patients anywhere in Ontario, Canada. Special interest in women's health and hormone imbalances, skin (acne, eczema, psoriasis), digestive health (bloating, IBS, GERD) and stress and chronic fatigue, with pediatric assessments for infants and children. New patients start with a free 15-minute virtual meet & greet, booked online.
+> Naturopathic doctor registered with the College of Naturopaths of Ontario, offering virtual naturopathic care by video to patients anywhere in Ontario, Canada. Special interest in fertility (individualized support for people trying to conceive, based on health history, lab results and nutrient status), women's health and hormone imbalances, skin (acne, eczema, psoriasis), digestive health (bloating, IBS, GERD) and stress and chronic fatigue, and sees infants and children (booked directly with Dr. Averbuch). New patients start with a free 15-minute virtual meet & greet, booked online.
 
 - Credentials: Doctor of Naturopathy (ND), Canadian College of Naturopathic Medicine (CCNM); BA Honours in Psychology, Wilfrid Laurier University
 - Registration: in good standing with the College of Naturopaths of Ontario (CONO)
@@ -15,7 +15,6 @@
 
 - [Meet & greet, 15 min, video](https://drsannaaverbuchnd.janeapp.com/#/staff_member/1/treatment/2): Free
 - [Initial assessment, 75 min, video, new patients](https://drsannaaverbuchnd.janeapp.com/#/staff_member/1/treatment/1): $250
-- [Pediatric initial assessment, 60 min](https://drsannaaverbuchnd.janeapp.com/#/staff_member/1/treatment/9): $225
 - [Extended follow-up, 60 min, video, existing patients](https://drsannaaverbuchnd.janeapp.com/#/staff_member/1/treatment/3): $200
 - [Follow-up, 45 min, video, existing patients](https://drsannaaverbuchnd.janeapp.com/#/staff_member/1/treatment/4): $170
 - [Short follow-up, 30 min, video, existing patients](https://drsannaaverbuchnd.janeapp.com/#/staff_member/1/treatment/5): $150
