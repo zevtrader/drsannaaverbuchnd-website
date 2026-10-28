@@ -280,3 +280,20 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-brand, .footer-grid > :last-child { grid-column: 1 / -1; }
 }
+
+/* About: "At a glance" facts (easy for people and AI assistants to scan) */
+.facts { margin: 0 0 2.2em; padding: 24px 26px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.facts .facts-title { margin: 0 0 14px; font: 600 0.78rem/1.3 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--clay); }
+.facts dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; margin: 0; }
+.facts dt { font-weight: 600; }
+.facts dd { margin: 0; color: var(--muted); }
+@media (max-width: 559px) {
+  .facts dl { grid-template-columns: 1fr; gap: 2px; }
+  .facts dd + dt { margin-top: 10px; }
+}
+
+/* Services: common questions */
+.faq { display: grid; gap: 0 48px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+.faq-item { padding: 22px 0; border-top: 1px solid var(--line); }
+.faq-item h3 { margin-bottom: 0.45em; font-size: 1.2rem; }
+.faq-item p { margin: 0; color: var(--muted); }

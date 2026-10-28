@@ -1,3 +1,6 @@
+# Every crawler is welcome, including AI assistants (ChatGPT, Claude, Perplexity,
+# Gemini, Copilot). Being readable by them is how the practice shows up in AI answers,
+# so don't block them here or in Cloudflare's AI crawler settings.
 User-agent: *
 Allow: /
 

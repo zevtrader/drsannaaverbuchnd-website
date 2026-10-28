@@ -4,7 +4,8 @@
 Errors (exit 1): broken HTML structure, missing alt text, not exactly one <h1>,
 missing title/description/canonical, invalid JSON-LD, broken internal links,
 header/footer/booking bar out of sync between pages, pages missing from the
-sitemap, redirects to pages that don't exist.
+sitemap or without a lastmod date, redirects to pages that don't exist, and
+fees that disagree between the services page, the home page and llms.txt.
 
 Warnings: wording the College of Naturopaths of Ontario advertising standard
 doesn't allow (testimonials, guarantees, superlatives). Review each one.
@@ -161,6 +162,52 @@ for line in (PUBLIC / "_redirects").read_text(encoding="utf-8").splitlines():
     if len(parts) >= 2 and not parts[0].startswith("#") and parts[1].startswith("/"):
         if not page_for(parts[1]).exists():
             errors.append(f"_redirects: {parts[0]} -> {parts[1]} goes nowhere")
+
+# Every sitemap entry needs a lastmod date (search engines use it to recrawl changed pages).
+for entry in re.findall(r"<url>(.*?)</url>", sitemap, re.S):
+    lastmod = re.search(r"<lastmod>([^<]+)</lastmod>", entry)
+    if not lastmod or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod.group(1)):
+        errors.append(f"sitemap.xml: missing or malformed <lastmod> in {entry.strip()[:80]}")
+
+# Fees must agree between the services page, the home page and llms.txt.
+JANE = "https://drsannaaverbuchnd.janeapp.com/"
+fees = {}
+fee_list = re.search(r'<ul class="fee-list">(.*?)</ul>', parsed["services.html"][0], re.S)
+if not fee_list:
+    errors.append("services.html: can't find the fee list")
+else:
+    for item in re.findall(r"<li>(.*?)</li>", fee_list.group(1), re.S):
+        price = re.search(r'<span class="fee-price">([^<]+)</span>', item)
+        link = re.search(r'href="(https://drsannaaverbuchnd\.janeapp\.com/[^"]+)"', item)
+        if price and link:
+            fees[link.group(1)] = price.group(1).strip()
+
+steps = re.search(r'<ol class="steps">(.*?)</ol>', parsed["index.html"][0], re.S)
+initial = fees.get(JANE + "#/staff_member/1/treatment/1")
+follow_ups = [
+    int(price.lstrip("$").replace(",", ""))
+    for url, price in fees.items()
+    if url.endswith(("/treatment/3", "/treatment/4", "/treatment/5")) and price.startswith("$")
+]
+if steps and initial and initial not in steps.group(1):
+    errors.append(f'index.html: "How it works" doesn\'t show the initial assessment fee ({initial})')
+if steps and follow_ups and f"from ${min(follow_ups)}" not in steps.group(1):
+    errors.append(f'index.html: "How it works" should say follow-ups are "from ${min(follow_ups)}"')
+
+llms_path = PUBLIC / "llms.txt"
+if not llms_path.exists():
+    errors.append("llms.txt is missing")
+else:
+    llms = llms_path.read_text(encoding="utf-8")
+    llms_fees = dict(re.findall(r"\]\((https://drsannaaverbuchnd\.janeapp\.com/[^)\s]+)\):\s*(\S+)", llms))
+    for url, price in fees.items():
+        if llms_fees.get(url) != price:
+            errors.append(f"llms.txt: fee for {url.split('#/')[-1]} is {llms_fees.get(url)!r}; services page says {price!r}")
+    for url in llms_fees.keys() - fees.keys():
+        errors.append(f"llms.txt: lists a visit that isn't on the services page: {url}")
+    for loc in re.findall(r"<loc>([^<]+)</loc>", sitemap):
+        if f"({loc})" not in llms:
+            errors.append(f"llms.txt: missing page {loc}")
 
 for warning in warnings:
     print(f"WARNING  {warning}")

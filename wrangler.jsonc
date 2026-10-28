@@ -2,8 +2,9 @@
   // Static site on Cloudflare Workers (free plan). Deploy with: npx wrangler deploy
   "name": "drsannaaverbuchnd",
   "compatibility_date": "2026-09-01",
-  // Serve only on her domain, not on a duplicate *.workers.dev address.
-  "workers_dev": false,
+  // Preview address (…workers.dev) for review before launch. Set to false at
+  // cutover so the site isn't served from two addresses.
+  "workers_dev": true,
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page"

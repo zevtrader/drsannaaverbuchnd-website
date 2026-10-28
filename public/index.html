@@ -24,29 +24,43 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Dr. Sanna Averbuch, ND",
-    "description": "Naturopathic doctor offering virtual care across Ontario, with a special interest in women's health and hormone imbalances, skin, digestive health, stress management and chronic fatigue.",
-    "url": "https://www.drsannaaverbuchnd.com/",
-    "email": "sanna.averbuch.nd@gmail.com",
-    "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
-    "sameAs": ["https://www.instagram.com/cycleofbeauty/"],
-    "founder": {
-      "@type": "Person",
-      "name": "Sanna Averbuch",
-      "honorificPrefix": "Dr.",
-      "honorificSuffix": "ND",
-      "jobTitle": "Naturopathic Doctor",
-      "alumniOf": [
-        { "@type": "CollegeOrUniversity", "name": "Canadian College of Naturopathic Medicine" },
-        { "@type": "CollegeOrUniversity", "name": "Wilfrid Laurier University" }
-      ]
-    },
-    "potentialAction": {
-      "@type": "ReserveAction",
-      "name": "Book an appointment",
-      "target": "https://drsannaaverbuchnd.janeapp.com/"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.drsannaaverbuchnd.com/#website",
+        "url": "https://www.drsannaaverbuchnd.com/",
+        "name": "Dr. Sanna Averbuch, ND",
+        "inLanguage": "en-CA",
+        "publisher": { "@id": "https://www.drsannaaverbuchnd.com/#practice" }
+      },
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://www.drsannaaverbuchnd.com/#practice",
+        "name": "Dr. Sanna Averbuch, ND",
+        "description": "Naturopathic doctor registered with the College of Naturopaths of Ontario, offering virtual care across Ontario with a special interest in women's health and hormone imbalances, skin, digestive health, stress management and chronic fatigue, plus pediatric assessments.",
+        "url": "https://www.drsannaaverbuchnd.com/",
+        "email": "sanna.averbuch.nd@gmail.com",
+        "image": "https://static.wixstatic.com/media/51c2f7_ba8aff1b3e4b4b94806e65ec1ac991dc~mv2.jpeg/v1/fill/w_1200,h_630,al_t,q_85/og.jpeg",
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario", "containedInPlace": { "@type": "Country", "name": "Canada" } },
+        "knowsAbout": ["Naturopathic medicine", "Women's health", "Hormone imbalances", "Skin health", "Digestive health", "Stress management", "Chronic fatigue", "Pediatric naturopathic care"],
+        "founder": { "@id": "https://www.drsannaaverbuchnd.com/about#sanna" },
+        "sameAs": ["https://www.instagram.com/cycleofbeauty/"],
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "name": "Book an appointment",
+          "target": "https://drsannaaverbuchnd.janeapp.com/"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.drsannaaverbuchnd.com/about#sanna",
+        "name": "Sanna Averbuch",
+        "honorificPrefix": "Dr.",
+        "honorificSuffix": "ND",
+        "jobTitle": "Naturopathic Doctor",
+        "url": "https://www.drsannaaverbuchnd.com/about"
+      }
+    ]
   }
   </script>
 </head>
@@ -71,7 +85,7 @@
         <div>
           <p class="eyebrow">Naturopathic doctor &middot; Virtual care across Ontario</p>
           <h1>Ready to understand what your body is telling you?</h1>
-          <p class="lead">Your symptoms are your body's way of sending a message. Dr. Sanna Averbuch, ND, helps you tune in and follow the clues to better health, with a special interest in women's health and hormones, skin, gut health, stress and fatigue.</p>
+          <p class="lead">Your symptoms are your body's way of sending a message. Dr. Sanna Averbuch is a registered naturopathic doctor (ND) who helps patients across Ontario tune in and follow the clues to better health, with a special interest in women's health and hormones, skin, gut health, stress and fatigue.</p>
           <div class="actions">
             <a class="btn btn-primary" href="https://drsannaaverbuchnd.janeapp.com/#/staff_member/1/treatment/2">Book a free 15-min call</a>
             <a class="btn btn-secondary" href="/services">Services &amp; fees</a>

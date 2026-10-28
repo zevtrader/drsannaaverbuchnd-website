@@ -65,4 +65,4 @@ Nothing is ever lost. Every change is kept in the history, and Cloudflare keeps 
 - Check before publishing with `python3 scripts/check.py`. GitHub runs it on every pull request too.
 - Once Cloudflare Workers Builds is connected (see LAUNCH.md), pushes to `main` deploy automatically.
 - `public/_redirects` keeps the old Wix URLs (`/services-1`, `/contact-3`) working.
-- Launch checklist and domain move: [LAUNCH.md](LAUNCH.md). Instructions for Claude: [CLAUDE.md](CLAUDE.md).
+- Launch checklist and domain move: [LAUNCH.md](LAUNCH.md). Showing up in AI assistants: [VISIBILITY.md](VISIBILITY.md). Instructions for Claude: [CLAUDE.md](CLAUDE.md).

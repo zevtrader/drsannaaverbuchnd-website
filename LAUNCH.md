@@ -16,7 +16,8 @@ Hard stop: the domain expires **Nov 27, 2026**.
 
 ## Open questions for Sanna
 
-- Acupuncture and cupping are hands-on, but Jane only books virtual visits, and the old Wix search description mentions in-person visits in Stouffville. Keep them, drop them, or add a location?
+- Acupuncture and cupping are hands-on, but Jane only books virtual visits, and the old Wix search description mentions in-person visits in Stouffville (AI search already repeats this). Keep them, drop them, or add a location? A real in-person address also makes her eligible for a Google Business Profile, which matters for "naturopath near me" answers.
+- What is her CONO registration number, and the link to her public register entry? Showing both on the About page lets patients and AI assistants verify her registration.
 - Is the pediatric assessment virtual or in person?
 - Are the fees current?
 - Is the "keep health details out of email" note on the contact page OK?
@@ -62,7 +63,7 @@ Wix does not let you change a Wix domain's nameservers, and Cloudflare's registr
    - Go to Domains → Domain Actions → "Transfer away from Wix". Wix emails the authorization (EPP) code to the domain's registrant email.
    - At Porkbun, start a transfer, enter the code, and pay US$11.08. This adds a year and includes WHOIS privacy.
    - It usually finishes within 7 days. When it does, Wix disconnects the old site, so switch over right away.
-2. **Prepare Cloudflare while the transfer runs.** Add the domain on the Free plan and note the two nameservers it gives you.
+2. **Prepare Cloudflare while the transfer runs.** Add the domain on the Free plan and note the two nameservers it gives you. In AI Crawl Control, set the Search, Agent and Training categories to Allow (see VISIBILITY.md).
 3. **Switch over.** At Porkbun, set the nameservers to Cloudflare's. Once Cloudflare shows the domain as active:
    - Uncomment `routes` in `wrangler.jsonc` and push. Workers Builds deploys it to `www.drsannaaverbuchnd.com`.
    - In Rules, add the "Redirect from root to WWW" redirect rule.
@@ -72,7 +73,8 @@ Wix does not let you change a Wix domain's nameservers, and Cloudflare's registr
 4. **Free extras.**
    - Cloudflare Web Analytics: cookieless, no banner needed.
    - Email Routing (optional, receive-only): for example, `hello@drsannaaverbuchnd.com` forwards to her Gmail.
-   - Google Search Console: verify the domain and submit `/sitemap.xml`.
+   - Google Search Console and Bing Webmaster Tools: verify the domain and submit `/sitemap.xml`. Bing feeds Copilot and ChatGPT search.
+   - The rest of the AI-visibility checklist (directory listings, monthly checks) is in VISIBILITY.md.
 5. **Close out Wix.**
    - Export contacts and form submissions before the plan ends.
    - Unpublish the old site, so the free `wixsite.com` copy doesn't compete in search.

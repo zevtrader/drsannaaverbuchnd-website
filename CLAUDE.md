@@ -17,7 +17,7 @@ Usually Sanna herself. She is not a developer.
 
 ## Structure
 
-- `public/` is everything that is served: `index.html`, `about.html`, `services.html`, `contact.html`, `404.html`, `styles.css`, `_redirects`, `_headers`, `sitemap.xml`, `robots.txt`, `favicon.svg`.
+- `public/` is everything that is served: `index.html`, `about.html`, `services.html`, `contact.html`, `404.html`, `styles.css`, `_redirects`, `_headers`, `sitemap.xml`, `robots.txt`, `llms.txt`, `favicon.svg`.
 - The header, footer and mobile booking bar (`.mobile-cta`) are repeated in every page. Change them identically everywhere; `scripts/check.py` fails if they drift.
 - New page:
   - Copy an existing page's `<head>` and give it a unique `<title>`, meta description, canonical URL and `og:` tags.
@@ -64,6 +64,27 @@ Also:
 - Fees may be shown.
 - Health claims should stay accurate and evidence-informed. When unsure, keep her existing wording and flag it.
 - Privacy: the site collects no personal data and sets no cookies; keep it that way. No contact forms that could collect health details.
+
+## Showing up in AI assistants and search
+
+The goal is for ChatGPT, Claude, Perplexity, Gemini and Copilot to recommend her. VISIBILITY.md has the full plan.
+
+- **Keep facts identical everywhere.** Fees, visit types, focus areas, credentials and location live in the pages, in `public/llms.txt`, and in the JSON-LD in `index.html` and `about.html`. When one changes, update every place, then remind her to match her Jane profile and directory listings. `scripts/check.py` verifies fees.
+- **Update dates.** When you change a page, set its `<lastmod>` in `sitemap.xml` to today's date.
+- **Write facts as plain sentences** in the page text, not only in images or JSON-LD, so assistants can quote them.
+- **Keep `robots.txt` open** to every crawler.
+- **Focus pages** (one per concern, such as acne, PMS and hormones, IBS, menopause):
+  - File: `public/<concern>.html`, for example `public/acne.html`.
+  - Title: "Naturopathic care for <concern> | Dr. Sanna Averbuch, ND". H1: "Naturopathic care for <concern>".
+  - Sections:
+    1. Who it's for: the symptoms she sees, using her wording.
+    2. How Dr. Averbuch approaches it: ask her for this; don't invent clinical claims.
+    3. What the first visit involves.
+    4. Link to the fees on the services page.
+    5. Booking button.
+  - No promises of results.
+  - Link it from the matching card in the home page's "Areas of focus" (not the nav), and add it to `sitemap.xml` and `llms.txt`.
+- **New FAQ entries** go in the "Common questions" section of `services.html`. Use her real patients' questions and answers she approves.
 
 ## Before you finish
 
