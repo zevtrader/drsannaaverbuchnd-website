@@ -39,7 +39,6 @@ Booking happens on Jane, and Jane cannot be embedded. Buttons deep-link to `http
 | --- | --- |
 | Free 15-min meet & greet | `#/staff_member/1/treatment/2` |
 | Initial assessment, 75 min | `#/staff_member/1/treatment/1` |
-| Pediatric initial assessment, 60 min | `#/staff_member/1/treatment/9` |
 | Extended follow-up, 60 min | `#/staff_member/1/treatment/3` |
 | Follow-up, 45 min | `#/staff_member/1/treatment/4` |
 | Follow-up, 30 min | `#/staff_member/1/treatment/5` |
