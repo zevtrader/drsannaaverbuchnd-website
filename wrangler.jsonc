@@ -8,7 +8,9 @@
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page"
-  }
+  },
+  // Required by `wrangler preview`, which Cloudflare runs for pull-request previews.
+  "previews": {}
   // After the domain is on Cloudflare, uncomment to serve the site on it:
   // ,"routes": [
   //   { "pattern": "www.drsannaaverbuchnd.com", "custom_domain": true }
