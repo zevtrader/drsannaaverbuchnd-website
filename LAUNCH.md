@@ -24,7 +24,7 @@ Hard stop: the domain expires **Nov 27, 2026**.
 ## Before launch
 
 - [ ] Sanna reviews all copy. It is her Wix text, lightly edited for flow, plus the fees from her Jane page.
-- [ ] Move photos off Wix. Download the originals from the Wix Media Manager into `public/images/`, compress them (for example with squoosh.app), and replace every `static.wixstatic.com` URL, including the `og:image` tags.
+- [x] Photos moved off Wix into `public/images/` (Oct 28), with a share card at `/images/og.jpg`.
 - [ ] Don't reuse the stock photos from the old services page (cupping, acupuncture, food). Wix licenses its free media for use on Wix sites only.
 
 ## Give Sanna access

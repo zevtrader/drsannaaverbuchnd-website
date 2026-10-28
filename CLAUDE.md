@@ -30,7 +30,6 @@ Usually Sanna herself. She is not a developer.
 - Images:
   - Put them in `public/images/`, at most about 1600px on the long edge and under 300 KB.
   - Always give them meaningful `alt` text and `width`/`height` attributes.
-- Some photos still load from `static.wixstatic.com`. They must move into `public/images/` before Wix is cancelled (see LAUNCH.md).
 
 ## Booking (Jane App)
 
