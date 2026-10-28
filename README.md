@@ -23,8 +23,8 @@ You need a Claude Pro plan or higher.
 3. Claude makes the change and explains it. Ask for tweaks until it's right.
 4. To publish:
    - Click **Create PR**.
-   - Open the pull request on GitHub.
-   - Click **Merge pull request**. The live site updates within a couple of minutes.
+   - Open the pull request on GitHub. Cloudflare builds a preview of just that change and posts its address on the pull request, so you can check it before it goes live.
+   - Click **Merge pull request**. Cloudflare publishes the site within about two minutes, on its own. Nobody has to press anything else.
 
 Claude already knows your site's rules (below) and will tell you if a request would break them.
 
@@ -63,6 +63,8 @@ Nothing is ever lost. Every change is kept in the history, and Cloudflare keeps 
 - Plain HTML and CSS in `public/`. No build step, no JavaScript.
 - Preview locally with `python3 serve.py`, then open http://localhost:8787.
 - Check before publishing with `python3 scripts/check.py`. GitHub runs it on every pull request too.
-- Once Cloudflare Workers Builds is connected (see LAUNCH.md), pushes to `main` deploy automatically.
+- Hosting is a Cloudflare Worker named `drsannaaverbuchnd` in Sanna's Cloudflare account, connected to this repository through Cloudflare Workers Builds. Every push to `main` runs `npx wrangler deploy` on Cloudflare's side and goes live; no local Cloudflare login or token is needed. Other branches get preview builds at `<branch>-drsannaaverbuchnd.sanna-averbuch-nd.workers.dev`.
+- Before launch, the production site is at https://drsannaaverbuchnd.sanna-averbuch-nd.workers.dev. After launch it's https://www.drsannaaverbuchnd.com (see LAUNCH.md).
+- Deploy history, build logs and one-click rollback: Cloudflare dashboard → Workers & Pages → `drsannaaverbuchnd` → Deployments.
 - `public/_redirects` keeps the old Wix URLs (`/services-1`, `/contact-3`) working.
 - Launch checklist and domain move: [LAUNCH.md](LAUNCH.md). Showing up in AI assistants: [VISIBILITY.md](VISIBILITY.md). Instructions for Claude: [CLAUDE.md](CLAUDE.md).

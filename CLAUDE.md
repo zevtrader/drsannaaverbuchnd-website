@@ -85,6 +85,15 @@ The goal is for ChatGPT, Claude, Perplexity, Gemini and Copilot to recommend her
   - Link it from the matching card in the home page's "Areas of focus" (not the nav), and add it to `sitemap.xml` and `llms.txt`.
 - **New FAQ entries** go in the "Common questions" section of `services.html`. Use her real patients' questions and answers she approves.
 
+## Deploying
+
+- Hosting: a Cloudflare Worker named `drsannaaverbuchnd` (static assets only) in Sanna's Cloudflare account, connected to this GitHub repo via Workers Builds.
+- `main` is production. Every push to `main` triggers Cloudflare to run `npx wrangler deploy` and the change is live within about two minutes. There is nothing to run locally and no token to configure; never try `wrangler login` or `wrangler deploy` yourself.
+- Any other branch gets a preview build; Cloudflare comments the preview address on the pull request. The production URL is https://drsannaaverbuchnd.sanna-averbuch-nd.workers.dev until launch, then https://www.drsannaaverbuchnd.com.
+- `wrangler.jsonc` must keep `"name": "drsannaaverbuchnd"`; Cloudflare matches it to the Worker and builds fail otherwise. `workers_dev` is `true` until launch and `false` after (see LAUNCH.md).
+- A failed build doesn't change the live site. Logs are in the Cloudflare dashboard → Workers & Pages → `drsannaaverbuchnd` → Deployments. Rollback is also there, or revert the commit on GitHub.
+- The GitHub Action (`.github/workflows/check.yml`) runs `scripts/check.py` on every pull request; a red check means don't publish.
+
 ## Before you finish
 
 - Run `python3 scripts/check.py`. It must pass. It checks HTML structure, alt text, one `<h1>` per page, internal links, header and footer consistency, the sitemap, and flags wording the advertising rules forbid.
