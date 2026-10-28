@@ -6,11 +6,10 @@ Moving drsannaaverbuchnd.com off Wix. Target: the new site live by about **Oct 2
 
 | By | What |
 | --- | --- |
-| Oct 11 | Sanna reviews the preview and answers the open questions below. If she's in, she turns off auto-renew on the Wix **plan** (Wix renewals aren't refundable, and plans are billed up to 3 weeks before the purchase anniversary). |
-| Oct 12–18 | Apply her edits and move her photos into `public/images/`. Open Porkbun and Cloudflare accounts in her name. Connect this repo to Cloudflare (see below). |
-| Oct 20 | She requests the Wix transfer code; start the transfer at Porkbun. Then turn off auto-renew on the Wix **domain** (Wix bills domains 30 days before expiry, around Oct 28). |
-| ~Oct 27 | The transfer completes. Switch the nameservers to Cloudflare and deploy; the site is live. |
-| Early Nov | Export anything from Wix and unpublish the old site. |
+| Oct 28 | Done: transfer requested at Wix (lock lifted 12:30 pm), paid at Porkbun with "Move DNS to Porkbun after the transfer", Cloudflare account created with the domain added (pending) and placeholder DNS records in place. |
+| Now | She approves Porkbun's transfer email (and Wix's, if one arrives). Auto-renew off on the Wix **plan** (billed ~Nov 6, not refundable). Justin connects the repo to her Cloudflare account; she reviews the preview. |
+| By ~Nov 4 | The transfer completes (Porkbun emails her). Same day: paste the nameservers into Porkbun; the site is live. |
+| Mid Nov | Export anything from Wix and unpublish the old site. |
 
 Hard stop: the domain expires **Nov 27, 2026**.
 
@@ -63,10 +62,22 @@ Wix does not let you change a Wix domain's nameservers, and Cloudflare's registr
    - Go to Domains → Domain Actions → "Transfer away from Wix". Wix emails the authorization (EPP) code to the domain's registrant email.
    - At Porkbun, start a transfer, enter the code, and pay US$11.08. This adds a year and includes WHOIS privacy.
    - It usually finishes within 7 days. When it does, Wix disconnects the old site, so switch over right away.
-2. **Prepare Cloudflare while the transfer runs.** Add the domain on the Free plan and note the two nameservers it gives you. In AI Crawl Control, set the Search, Agent and Training categories to Allow (see VISIBILITY.md).
-3. **Switch over.** At Porkbun, set the nameservers to Cloudflare's. Once Cloudflare shows the domain as active:
-   - Uncomment `routes` in `wrangler.jsonc` and push. Workers Builds deploys it to `www.drsannaaverbuchnd.com`.
-   - In Rules, add the "Redirect from root to WWW" redirect rule.
+2. **Prepare Cloudflare while the transfer runs.** Done on Oct 28: the domain is added on the Free plan (status "Pending") with two placeholder records, `A @ 192.0.2.1` and `AAAA www 100::`, both proxied. Cloudflare's nameservers for this domain:
+
+   ```
+   dante.ns.cloudflare.com
+   maeve.ns.cloudflare.com
+   ```
+
+   Also done on Oct 28, from Justin's Administrator login:
+   - Workers Builds is connected to this repo. Worker `drsannaaverbuchnd`; every push to `main` deploys.
+   - Preview address for review: https://drsannaaverbuchnd.sanna-averbuch-nd.workers.dev
+   - Route `www.drsannaaverbuchnd.com/*` → the Worker (Worker → Domains).
+   - Redirect rule "Redirect root to www" (301, keeps query strings) in Rules → Redirect Rules.
+3. **Switch over, the day Porkbun says the transfer is complete.** At Porkbun → the domain → Nameservers, replace Porkbun's with the two above. Cloudflare emails when the domain is active, usually within an hour. Then:
+   - Check `https://www.drsannaaverbuchnd.com` loads with a valid certificate, `https://drsannaaverbuchnd.com` redirects to it, and `/services-1` lands on `/services`.
+   - AI Crawl Control (zone sidebar → AI Crawl Control → Security) only unlocks once the domain is active: set Search, Agent and Training to Allow (see VISIBILITY.md).
+   - Set `workers_dev` to `false` in `wrangler.jsonc` and push, so the site isn't also served from the preview address.
    - Check that `https://www.drsannaaverbuchnd.com/services-1` lands on `/services`.
 
    Bookings keep working throughout, because they happen on Jane.
