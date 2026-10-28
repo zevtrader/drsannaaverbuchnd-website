@@ -7,7 +7,7 @@ Moving drsannaaverbuchnd.com off Wix. Target: the new site live by about **Oct 2
 | By | What |
 | --- | --- |
 | Oct 28 | Done: transfer requested at Wix (lock lifted 12:30 pm), paid at Porkbun with "Move DNS to Porkbun after the transfer", Cloudflare account created with the domain added (pending) and placeholder DNS records in place. |
-| Now | She approves Porkbun's transfer email (and Wix's, if one arrives). Auto-renew off on the Wix **plan** (billed ~Nov 6, not refundable). Justin connects the repo to her Cloudflare account; she reviews the preview. |
+| Oct 28, later | Done: transfer approved (registry shows `pendingTransfer`), auto-renew off on the Wix plan and domain, repo connected to her Cloudflare account, photos moved into the repo. Open: she reviews the preview and the questions below. |
 | By ~Nov 4 | The transfer completes (Porkbun emails her). Same day: paste the nameservers into Porkbun; the site is live. |
 | Mid Nov | Export anything from Wix and unpublish the old site. |
 
