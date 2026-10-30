@@ -145,7 +145,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .section-head p:last-child { margin-bottom: 0; }
 
 /* Hero */
-.hero { padding-block: clamp(36px, 6vw, 88px) clamp(56px, 8vw, 104px); }
+.hero { padding-block: clamp(36px, 6vw, 88px) clamp(56px, 8vw, 104px); background: linear-gradient(180deg, color-mix(in srgb, var(--blush) 70%, var(--bg)), var(--bg)); }
 .hero-grid { display: grid; gap: clamp(40px, 6vw, 80px); align-items: center; }
 .hero h1 { max-width: 13em; }
 .h1-sub { display: block; margin-top: 0.55em; font-size: clamp(1.15rem, 1rem + 0.7vw, 1.5rem); line-height: 1.3; color: var(--accent); }
@@ -170,7 +170,8 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; }
 .card h3 { margin-bottom: 0.4em; }
-.card-feature { grid-column: 1 / -1; border: 1.5px solid var(--clay); }
+.card-feature { grid-column: 1 / -1; border: 1.5px solid var(--clay); background: color-mix(in srgb, var(--clay) 7%, var(--surface)); }
+.card-feature h3 { color: var(--clay); }
 .card-feature p { max-width: 44em; }
 @media (min-width: 640px) {
   .focus-cards .card-accent { grid-column: 1 / -1; flex-direction: row; align-items: center; }
