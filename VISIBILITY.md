@@ -13,7 +13,7 @@ Goal: when someone asks ChatGPT, Claude, Perplexity, Gemini or Copilot for a nat
 - Plain HTML that crawlers read without running JavaScript. The Wix site needs about 87 scripts to show anything.
 - `robots.txt` welcomes every crawler, including AI ones.
 - `llms.txt`: a plain-text summary of the practice, her credentials, and the visits and fees.
-- Structured data for search engines: the practice, plus her degree, her College of Naturopaths of Ontario registration, her OAND/CAND memberships and her areas of focus.
+- Structured data for search engines: the practice, plus her degree, her College of Naturopaths of Ontario registration, her OAND/CAND memberships and her special interests.
 - An "At a glance" facts box on About, and "Common questions" on Services & fees, phrased the way people ask.
 - A sitemap with last-modified dates.
 - Removed an outdated claim. The Wix search description says she sees patients in person in Stouffville, and AI search already repeats it. The new site leaves it out until she confirms.
@@ -33,20 +33,20 @@ Goal: when someone asks ChatGPT, Claude, Perplexity, Gemini or Copilot for a nat
 Use the same facts everywhere: **Dr. Sanna Averbuch, ND · Naturopathic doctor · Virtual care across Ontario · www.drsannaaverbuchnd.com**.
 
 - [ ] **College of Naturopaths of Ontario public register:** check that her practice details are current, and add the website if the register allows it. Then link her register entry from the About page, so patients and AI assistants can verify her registration.
-- [ ] **OAND "Find a Naturopathic Doctor" directory** (a member benefit): fill in the profile completely, with focus areas, virtual care and the website link.
+- [ ] **OAND "Find a Naturopathic Doctor" directory** (a member benefit): fill in the profile completely, with special interests, virtual care and the website link.
 - [ ] **CAND directory:** same.
 - [ ] **Instagram @cycleofbeauty:** the bio says "Naturopathic Doctor (ND) · Virtual care across Ontario" and links to the website, not only to Linktree.
 - [ ] **LinkedIn:** same name, credentials and link.
-- [ ] **Jane profile bio:** same focus areas, plus a link to the website.
+- [ ] **Jane profile bio:** same special interests, plus a link to the website.
 - [ ] **In-person location (if she has one):** add a Google Business Profile and a Bing Places listing for it. These drive "naturopath near me" answers in Gemini, Google Maps and Copilot. A virtual-only practice isn't eligible for a Google Business Profile.
 - [ ] **Mentions on other sites:** she was a guest on the *Your Health Minute* podcast in June 2024, while still a student. Ask the host to update the show notes with her current title and website. More podcasts, guest articles and local news help in the same way.
 
 ## Content that gets quoted
 
-- **Focus pages:** one page per main concern, such as acne, PMS and hormones, IBS and bloating, and menopause. The Ontario naturopaths that currently appear in AI answers for these searches have pages like this.
+- **Special-interest pages:** one page per main concern, such as acne, PMS and hormones, IBS and bloating, and menopause. The Ontario naturopaths that currently appear in AI answers for these searches have pages like this.
   - Each page covers who it's for, her approach in her own words, what a first visit involves, and a booking link.
   - No promises of results.
-  - To make one, she can ask Claude: "Create a focus page on acne. Here's how I approach it: ...". CLAUDE.md has the template.
+  - To make one, she can ask Claude: "Create a page on acne. Here's how I approach it: ...". CLAUDE.md has the template.
 - **The FAQ:** keep adding real questions patients ask her.
 
 ## Check once a month

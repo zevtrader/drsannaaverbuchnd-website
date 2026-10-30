@@ -55,6 +55,7 @@ Never add any of these:
 - Guarantees of results: "guaranteed", "will cure".
 - Comparative or superlative claims: "best", "leading", "#1", "most effective".
 - Package deals, discounts tied to bundles, or referral rewards.
+- The word "focus" for her practice ("areas of focus", "focus on", "fertility-focused"). It can read as a claim of specialization. Say "special interest(s)" instead. "Reproductive Focus Shift" is the proper name of her CCNM program and stays.
 
 Also:
 
@@ -67,11 +68,11 @@ Also:
 
 The goal is for ChatGPT, Claude, Perplexity, Gemini and Copilot to recommend her. VISIBILITY.md has the full plan.
 
-- **Keep facts identical everywhere.** Fees, visit types, focus areas, credentials and location live in the pages, in `public/llms.txt`, and in the JSON-LD in `index.html` and `about.html`. When one changes, update every place, then remind her to match her Jane profile and directory listings. `scripts/check.py` verifies fees.
+- **Keep facts identical everywhere.** Fees, visit types, special interests, credentials and location live in the pages, in `public/llms.txt`, and in the JSON-LD in `index.html` and `about.html`. When one changes, update every place, then remind her to match her Jane profile and directory listings. `scripts/check.py` verifies fees.
 - **Update dates.** When you change a page, set its `<lastmod>` in `sitemap.xml` to today's date.
 - **Write facts as plain sentences** in the page text, not only in images or JSON-LD, so assistants can quote them.
 - **Keep `robots.txt` open** to every crawler.
-- **Focus pages** (one per concern, such as acne, PMS and hormones, IBS, menopause):
+- **Special-interest pages** (one per concern, such as acne, PMS and hormones, IBS, menopause):
   - File: `public/<concern>.html`, for example `public/acne.html`.
   - Title: "Naturopathic care for <concern> | Dr. Sanna Averbuch, ND". H1: "Naturopathic care for <concern>".
   - Sections:
@@ -81,7 +82,7 @@ The goal is for ChatGPT, Claude, Perplexity, Gemini and Copilot to recommend her
     4. Link to the fees on the services page.
     5. Booking button.
   - No promises of results.
-  - Link it from the matching card in the home page's "Areas of focus" (not the nav), and add it to `sitemap.xml` and `llms.txt`.
+  - Link it from the matching card in the home page's "Special interests" section (not the nav), and add it to `sitemap.xml` and `llms.txt`.
 - **New FAQ entries** go in the "Common questions" section of `services.html`. Use her real patients' questions and answers she approves.
 
 ## Deploying
