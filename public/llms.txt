@@ -22,7 +22,7 @@
 ## Pages
 
 - [Home](https://www.drsannaaverbuchnd.com/): overview, special interests and how care works
-- [Naturopathic care for fertility](https://www.drsannaaverbuchnd.com/fertility): who it is for (planning a pregnancy, unexplained infertility, irregular cycles, PCOS, endometriosis, recurrent pregnancy loss, support alongside IVF or IUI, partners including male partners), the approach, possible lab work (thyroid, iron, vitamin D, hormones), the first visit, fees, fertility FAQ
+- [Naturopathic care for fertility](https://www.drsannaaverbuchnd.com/fertility): who it is for (planning a pregnancy, unexplained infertility, irregular cycles, PCOS, endometriosis, recurrent pregnancy loss, support alongside IVF or IUI), the approach, possible lab work (thyroid, iron, vitamin D, hormones), the first visit, fees, fertility FAQ
 - [About](https://www.drsannaaverbuchnd.com/about): background, education, registration and approach to care
 - [Services & fees](https://www.drsannaaverbuchnd.com/services): services, visits and fees, common questions
 - [Contact](https://www.drsannaaverbuchnd.com/contact): how to book or get in touch
