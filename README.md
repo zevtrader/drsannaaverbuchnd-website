@@ -18,7 +18,7 @@ You need a Claude Pro plan or higher.
 1. Open [claude.ai/code](https://claude.ai/code) and pick the `drsannaaverbuchnd-website` repository.
 2. Describe what you want in plain English, for example:
    - "Change the 45-minute follow-up fee to $180."
-   - "Add thyroid health to my areas of focus."
+   - "Add thyroid health to my special interests."
    - "Make the cupping description shorter."
 3. Claude makes the change and explains it. Ask for tweaks until it's right.
 4. To publish:
