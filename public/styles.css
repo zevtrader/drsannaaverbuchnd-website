@@ -107,6 +107,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .nav { display: flex; flex-wrap: wrap; gap: 4px 26px; margin-left: auto; }
 .nav a { color: var(--ink); text-decoration: none; font-weight: 500; padding: 6px 0; }
 .nav a:hover { color: var(--accent); }
+.nav .nav-book { display: none; color: var(--accent); font-weight: 600; }
 .nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--clay); text-decoration-thickness: 2px; text-underline-offset: 7px; }
 
 @media (min-width: 860px) {
@@ -114,6 +115,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 }
 @media (max-width: 859px) {
   .header-cta { display: none; }
+  .nav .nav-book { display: inline; }
   .nav { order: 3; width: 100%; margin-left: 0; gap: 2px 20px; font-size: 0.97rem; }
 }
 
