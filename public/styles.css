@@ -146,6 +146,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .hero { padding-block: clamp(36px, 6vw, 88px) clamp(56px, 8vw, 104px); }
 .hero-grid { display: grid; gap: clamp(40px, 6vw, 80px); align-items: center; }
 .hero h1 { max-width: 13em; }
+.h1-sub { display: block; margin-top: 0.55em; font-size: clamp(1.15rem, 1rem + 0.7vw, 1.5rem); line-height: 1.3; color: var(--accent); }
 .hero .lead { margin-bottom: 28px; }
 .hero .fine { margin: 14px 0 0; }
 .hero-photo { position: relative; isolation: isolate; width: min(440px, 100% - 28px); justify-self: center; }
