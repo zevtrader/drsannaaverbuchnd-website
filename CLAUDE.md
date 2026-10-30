@@ -58,7 +58,7 @@ Never add any of these:
 
 Also:
 
-- Keep "Dr." directly before her name, with ", ND" after it: "Dr. Sanna Averbuch, ND".
+- Keep "Dr." directly before her name, with ", ND" after it: "Dr. Sanna Averbuch, ND". This applies every time, including the short form: write "Dr. Averbuch, ND", never "Dr. Averbuch" alone (also in alt text and `llms.txt`). The one exception is when the same sentence immediately calls her a naturopathic doctor, as in "Dr. Sanna Averbuch is a registered naturopathic doctor (ND)". Reword possessives ("the motto of Dr. Averbuch, ND") rather than writing "ND's".
 - Fees may be shown.
 - Health claims should stay accurate and evidence-informed. When unsure, keep her existing wording and flag it.
 - Privacy: the site collects no personal data and sets no cookies; keep it that way. No contact forms that could collect health details.
