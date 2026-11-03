@@ -82,7 +82,7 @@ Wix does not let you change a Wix domain's nameservers, and Cloudflare's registr
 
    Bookings keep working throughout, because they happen on Jane.
 4. **Free extras.**
-   - Cloudflare Web Analytics: cookieless, no banner needed.
+   - Visitor numbers: use the domain's built-in Analytics in Cloudflare (zone sidebar → Analytics), which counts traffic without adding anything to the pages. Don't turn on Cloudflare Web Analytics: it injects a JavaScript snippet, and the site has no JavaScript or trackers.
    - Email Routing (optional, receive-only): for example, `hello@drsannaaverbuchnd.com` forwards to her Gmail.
    - Google Search Console and Bing Webmaster Tools: verify the domain and submit `/sitemap.xml`. Bing feeds Copilot and ChatGPT search.
    - The rest of the AI-visibility checklist (directory listings, monthly checks) is in VISIBILITY.md.

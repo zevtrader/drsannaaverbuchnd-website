@@ -2,17 +2,15 @@
   // Static site on Cloudflare Workers (free plan). Deploy with: npx wrangler deploy
   "name": "drsannaaverbuchnd",
   "compatibility_date": "2026-09-01",
-  // Preview address (…workers.dev) for review before launch. Set to false at
-  // cutover so the site isn't served from two addresses.
-  "workers_dev": true,
+  // The preview address (…workers.dev) was for review before launch. Off since
+  // the Nov 3, 2026 cutover so the site isn't served from two addresses.
+  "workers_dev": false,
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page"
   },
   // Required by `wrangler preview`, which Cloudflare runs for pull-request previews.
   "previews": {}
-  // After the domain is on Cloudflare, uncomment to serve the site on it:
-  // ,"routes": [
-  //   { "pattern": "www.drsannaaverbuchnd.com", "custom_domain": true }
-  // ]
+  // The site is served on www.drsannaaverbuchnd.com by a route set in the
+  // dashboard (Worker → Domains), so no "routes" here.
 }
